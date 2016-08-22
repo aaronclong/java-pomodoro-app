@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: [../lib/ormlite-jdbc-5.0.jar, ../lib/ormlite-core-5.0.jar,
+  ../lib/h2-1.4.192.jar]
+Main-Class: app.Mac.pomodoro.Main
+
