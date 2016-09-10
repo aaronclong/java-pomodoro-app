@@ -1,10 +1,15 @@
 package app.Mac.pomodoro;
 
-public class Main {
-    public Main() {
+import java.awt.EventQueue;
+import app.Mac.pomodoro.control.Init;
+import app.Mac.pomodoro.ui.Window;
 
-    }
+public class Main {
     public static void main(String[] args) {
-        System.out.println("What is going on?");
+        EventQueue.invokeLater(() -> {
+            Window w = new Window();
+            Init control = new Init(w);
+            //w.setVisible(true);
+        });
     }
 }

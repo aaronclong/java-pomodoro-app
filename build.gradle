@@ -33,14 +33,13 @@ dependencies {
 
 
 sourceSets {
-    main.java.srcDirs = ["src/main/java"]
-    test.java.srcDirs = ["src/test/java"]
+    main.java.srcDirs = ["src/main"]
+    test.java.srcDirs = ["src/test"]
 }
 
 jar {
-
+    from configurations.compile.collect { zipTree it }
     baseName = "Pomodoro"
     version = "1.0"
     manifest.attributes "Main-Class": "app.Mac.pomodoro.Main"
-    from configurations.compile.collect { zipTree it }
 }

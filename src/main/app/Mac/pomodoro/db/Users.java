@@ -21,8 +21,8 @@ public class Users {
     @DatabaseField(columnName = "email", canBeNull = false)
     private String email;
 
-    @DatabaseField(columnName = "hash", canBeNull = false)
-    private String hash;
+    //@DatabaseField(columnName = "hash", canBeNull = false)
+    //private String hash;
 
     @DatabaseField(columnName = "account_creation", canBeNull = false)
     private Date origin; //User addition date
@@ -35,17 +35,17 @@ public class Users {
     public Users(String name, String email, String password) {
         this.name = name;
         this.email = email;
-        this.hash = hashPassword(password);
+        //this.hash = hashPassword(password);
         this.origin = new Date();
         this.active = new Date();
     }
 
-    private String hashPassword(String pass) {
-       return pass;
-    }
-
     public String getName() {
         return this.name;
+    }
+
+    public Integer getID() {
+        return this.id;
     }
 
 }

@@ -43,11 +43,19 @@ public class SetUp {
 
     }
 
-    public Dao<Users, Integer> getUsersDao() { return usersDao; }
+    protected Dao<Users, Integer> getUsersDao() { return usersDao; }
+
+    protected Dao<Activities, Integer> getActiveDao() { return activeDao; }
+
+    protected Dao<Interval, Integer> getIntervalDao() { return intervalDao; }
 
     public boolean checkDir(String path) {
         File dir = new File(path);
         return dir.exists();
+    }
+
+    protected void close() {
+
     }
 
     public static void main(String[] args) {
@@ -66,6 +74,6 @@ public class SetUp {
             for(Users u : getNames) {
                 System.out.println(u.getName());
             }
-        }catch(Exception e) { System.out.println(e); }
+        } catch(Exception e) { System.out.println(e); }
     }
 }
