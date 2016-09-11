@@ -32,9 +32,8 @@ public class Init {
 
 
     public void setUsers() {
-        ManageUsers thoseUsers = new ManageUsers(db);
+        ManageUsers thoseUsers = new ManageUsers(db, view);
         thoseUsers.getUsers(view);
-
         //TODO: Start From here Pull the Mange Use through the builder method and add the view
     }
 

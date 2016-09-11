@@ -12,16 +12,6 @@ public class TopBar extends Layer {
     //Maybe redo implementing https://docs.oracle.com/javase/8/docs/api/javax/swing/ComboBoxModel.html
     private HashMap<Integer, String> selectUser;
 
-    public TopBar() {
-        super();
-        selectUser = new HashMap<Integer, String>();
-    }
-
-    public TopBar(HashMap<Integer, String> users) {
-        super();
-        selectUser = users;
-    }
-
     public void addUsers(HashMap<Integer, String> users) {
       selectUser = users;
     }
@@ -33,13 +23,7 @@ public class TopBar extends Layer {
         return users;
     }
 
-    //Slow because it is waiting on the database
-    public void render(Window w) {
-        JPanel pan = createFlow();
-        JButton addUser = new JButton("Add User");
-        pan.add(addUser);
-        pan.add(makeDropDown());
-        w.add(pan);
-    }
+    public void render() {
 
+    }
 }

@@ -16,9 +16,9 @@ public class ManageUsers extends Manager<QueryUsers> {
 
     private TopBar elem;
 
-    public ManageUsers(SetUp db) {
+    public ManageUsers(SetUp db, Window w) {
         super(new QueryUsers(db));
-        elem = new TopBar();
+        elem = new TopBar(w);
     }
 
     public void addUsers(Users newUser) {

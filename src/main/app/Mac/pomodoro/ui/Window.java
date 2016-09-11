@@ -1,31 +1,24 @@
 package app.Mac.pomodoro.ui;
 
-import java.awt.Container;
-import java.util.HashMap;
-import javax.swing.JFrame;
-import app.Mac.pomodoro.control.Init;
-import app.Mac.pomodoro.control.ManageUsers;
+import com.sun.tools.javac.comp.Flow;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.FlowPane;
+import javafx.stage.Stage;
 
 
 /**
  * Created by AaronLong on 9/5/16.
  */
-public class Window extends JFrame {
+public class Window extends Application {
 
-    private Container contentPane;
-
-    public Window() {
-        super("Pomodoro");
-        contentPane = getContentPane();
-        init();
+    @Override
+    public void start(Stage start) {
+        FlowPane root = new FlowPane();
+        Scene scene = new Scene(root, 400, 300);
+        start.setTitle("Pomodoro");
+        start.setScene(scene);
+        start.show();
     }
-
-    private void init() {
-        setSize(400, 500);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setVisible(true);
-    }
-
-    protected Container getPane() { return contentPane; }
 }
