@@ -4,9 +4,10 @@ import app.Mac.pomodoro.db.SetUp;
 import app.Mac.pomodoro.db.QueryUsers;
 import app.Mac.pomodoro.db.Users;
 import app.Mac.pomodoro.ui.TopBar;
-import app.Mac.pomodoro.ui.Window;
+import app.Mac.pomodoro.Window;
+import javafx.scene.layout.FlowPane;
 
-
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -15,18 +16,20 @@ import java.util.HashMap;
 public class ManageUsers extends Manager<QueryUsers> {
 
     private TopBar elem;
+    private HashMap<Integer, String> users;
 
-    public ManageUsers(SetUp db, Window w) {
+    public ManageUsers(SetUp db) {
         super(new QueryUsers(db));
-        elem = new TopBar(w);
+        elem = new TopBar();
     }
 
-    public void addUsers(Users newUser) {
+    public void updateUsers() {
+        users = getQ().getUsers();
+        elem.addUsers(new ArrayList<String>(users.values()));
     }
 
-    public void getUsers(Window w) {
-        elem.addUsers(getQ().getUsers());
-        elem.render(w);
+    public FlowPane render() {
+        return elem.render();
     }
 
 }

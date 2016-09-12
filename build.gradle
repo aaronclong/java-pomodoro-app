@@ -41,5 +41,5 @@ jar {
     from configurations.compile.collect { zipTree it }
     baseName = "Pomodoro"
     version = "1.0"
-    manifest.attributes "Main-Class": "app.Mac.pomodoro.Main"
+    manifest.attributes "Main-Class": "app.Mac.pomodoro.Window"
 }
