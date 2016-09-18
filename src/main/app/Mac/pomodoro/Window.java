@@ -22,12 +22,10 @@ public class Window extends Application {
 
     @Override
     public void start(Stage start) {
-        root = new FlowPane();
-        coordinator = new Coordinator(root);
-        coordinator.makeUsers();
-        Scene scene = new Scene(root, 400, 300);
+        //I don't how to set this out in an MVC style when everything must be done inside this class
         start.setTitle("Pomodoro");
-        start.setScene(scene);
+        coordinator = new Coordinator();
+        start.setScene(coordinator.init());
         start.show();
     }
 
