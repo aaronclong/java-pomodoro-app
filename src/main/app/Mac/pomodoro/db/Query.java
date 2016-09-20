@@ -9,7 +9,7 @@ import java.util.Collection;
 /**
  * Created by AaronLong on 9/7/16.
  */
-abstract class Query {
+public abstract class Query {
 
     private SetUp db;
 

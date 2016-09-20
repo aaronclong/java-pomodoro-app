@@ -1,31 +1,26 @@
 package app.Mac.pomodoro.ui;
-import java.awt.*;
-import javax.swing.JPanel;
-import javax.swing.GroupLayout;
+
+import javafx.scene.layout.Pane;
 
 /**
  * Created by AaronLong on 9/5/16.
  */
-abstract class Layer {
-    JPanel createPanel() {
-        return new JPanel();
+abstract class Layer<T extends Pane> {
+
+    private T pane;
+
+    public Layer(T p) {
+        pane = p;
     }
 
-    JPanel createFlow() {
-        JPanel flow = createPanel();
-        flow.setLayout(new FlowLayout());
-        return flow;
+    T getPane() {
+        return pane;
     }
 
-    JPanel creatGrid(int rows, int cols) {
-        JPanel grid = new JPanel();
-        grid.setLayout(new GridLayout(rows, cols));
-        return grid;
-    }
+     void setPane(T p) {
+         pane = p;
+         render();
+     }
 
-    GroupLayout createGroup(Container pane) {
-        return new GroupLayout((JPanel) pane);
-    }
-
-    abstract void render(Window w);
+    abstract T render();
 }
